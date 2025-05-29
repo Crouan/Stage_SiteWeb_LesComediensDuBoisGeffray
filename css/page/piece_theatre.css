@@ -1,0 +1,472 @@
+/*-----------------------------------*\
+  #index.css
+\*-----------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('clash-display.css');  
+
+/**
+ * copyright 2024 Thomas CROUAN
+ */
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+
+:root {
+
+    /** 
+     * Colors  
+     */
+  
+    --color-Honey-Bees: rgb(251, 214, 130);
+    --color-white: rgb(255, 255, 255);
+    --color-bg: rgb(10, 24, 31);
+    --color-black: rgb(0, 0, 0);
+    --color-cyan: #09a6d4;
+    --color-blackgrey: #222;
+    --color-rgba-red: rgb(150, 5, 16);
+    --color-rgba-black: rgba(251, 3, 3, 0.034);
+    --color-rgba-responsive: rgba(1, 1, 1, 0.5);
+    --color-grey: #bbbbbb;
+
+    /**  
+      * Gradient colors  
+      */
+
+    --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%,  transparent 66.66% 75%);
+  
+    /**  
+      * Typography  
+      */
+  
+    /* Font-family */
+    --fontFamily-slide: "Poppins", sans-serif;
+  
+    /* Font-size */
+    --fontSize-header: 1.5rem; 
+    --fontsize-slide-a: 1em; 
+    --fontsize-slide-h1: 4em;
+    --fontsize-slide-h1-span: 1.2em;
+    --fontsize-slide-a: 1.1em;
+    --fontsize-slider-responsive: 3em;
+    --fontsize-footer: 5em;
+    --fontsize-footer-h1: 25px;
+
+    /* font-weight */
+    --weight-h1: 900;
+    --weight-h1-span: 600;
+    --weight-bold: 700;
+    --weight-regular: 500;
+    --weight-footer: 300;
+  
+    /* line-height */
+    --line-height-1: 75px;
+  
+    /* letter-spacing */
+    --letterSpacing-1: 0.15em;
+
+  
+    /**
+      * Spacing
+      */
+  
+    --section-space: 70px;
+
+    --pading-1: 15px 35px;
+    --pading-header-1040: 12px 20px;
+    --pading-section-1040: 100px 20px;
+    --pading-footer: 30px 100px;
+
+    --letter-spacing-1: 5px;
+  
+    /**
+      * Shadow
+      */
+      
+    --shadow-1: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
+    --shadow-2: 0 5px 25px rgb(1 1 1 / 20%);
+  
+    /**
+      * Border Radius
+      */
+      --radius-1: 2px;
+      --radius-2: 5px;
+      --radius-circle: 50%;
+  
+    /**
+      * Transition
+      */
+      --transition-1: 0.3s ease;
+      --transition-2: 0.5s ease;
+      --transition-3: 2s ease;
+      --transition-footer: all 0.2s ease;
+  }
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamily-slide);
+  }
+
+  /*-----------------------------------*\
+    #TYPOGRAPHY
+  \*-----------------------------------*/
+  
+  
+  /*-----------------------------------*\
+    #REUSED STYLE
+  \*-----------------------------------*/
+  
+
+  /*-----------------------------------*\
+    #PRELOAD
+  \*-----------------------------------*/
+
+  /*-----------------------------------*\
+    #HOME
+  \*-----------------------------------*/
+  
+  section{
+    padding: 100px 100px;
+  }
+
+  .home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+
+  .home .content{
+    z-index: 888;
+    color: var(--color-white);
+    width: 70%;
+    display: block;
+  }
+
+
+  .home .content h1{
+    font-size: var(--fontsize-slide-h1);
+    font-weight: var(--weight-h1);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-1);
+    line-height: var(--line-height-1);
+    margin-bottom: 40px;
+  }
+
+  .home .content h1 span{
+    font-size: var(--fontsize-slide-h1-span);
+    font-weight: var(--weight-h1-span);
+  }
+
+  .home .content p{
+    margin-bottom: 40px;
+    color: var(--color-Honey-Bees);
+  }
+
+  .home .content a{
+    color: var(--color-Honey-Bees);
+    font-size: var(--fontsize-slide-a);
+    font-weight: var(--weight-regular);
+    text-decoration: none;
+  }
+
+  .btn-stick {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--color-Honey-Bees);
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-stick .stick {
+    margin-right: 0.8em;
+    height: 0.2em;
+    width: 2em;
+    position: relative;
+    background: var(--color-Honey-Bees);
+    transition: all 0.2s;
+    margin-bottom: 40px;
+  }
+
+
+  
+  .home img{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }  
+
+  .overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25); /* Couleur noire avec une opacité de 50% */
+  }
+
+
+
+  @media (max-width: 1040px) {
+
+    header{
+      padding: var(--pading-header-1040);
+    }
+
+    section{
+      padding: var(--pading-section-1040);
+    }
+
+    header .navigation{
+      display: none;
+    }
+
+    header .navigation.active{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--color-rgba-responsive);
+    }
+    
+    header .navigation .navigation-items a{
+      color: var(--color-blackgrey);
+      font-size: var(--fontsize-slide-h1-span);
+      margin: 20px;
+    }
+
+    header .navigation .navigation-items a:before{
+      background: var(--color-blackgrey);
+      height: 5px;
+    }
+
+    header .navigation .navigation-items{
+      background: var(--color-white);
+      width: 600px;
+      max-width: 600px;
+      margin: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: var(--radius-2);
+      box-shadow: var(--shadow-2);
+    }
+  }
+
+  @media (max-width: 560px){
+
+    .home .content h1{
+      font-size: var(--fontsize-slider-responsive);
+      line-height: 60px;
+      
+    }
+  }
+
+  /*-----------------------------------*\
+    #piece de théatre
+  \*-----------------------------------*/
+  
+  #card-container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-bg);
+  }
+
+  #card-container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-bg);
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-bg);
+  }
+
+  .card-content, h1, h2, h3, h4, h5, h6{
+    color: var(--color-white);
+  }
+  .card-main {
+    display: flex;
+    width: 80%;
+
+    background-color: var(--color-bg);
+    overflow: hidden;
+  }
+  
+  .card-img {
+    flex-basis: 40%;
+  }
+  
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    flex-basis: 60%;
+    padding: 40px;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .space{
+    margin-bottom: 20px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: var(--color-white);
+  }
+  
+  .card-date {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--color-Honey-Bees);
+  }
+  
+  .date {
+    margin: 0;
+  }
+
+  #card-container-1 h2{
+    color: var(--color-grey);
+    opacity: 0.3;
+    font-size: 150px;
+  }
+
+  #card-container-2 h2{
+    color: var(--color-grey);
+    opacity: 0.3;
+    font-size: 150px;
+  }
+
+  .card-container h2{
+    color: var(--color-grey);
+    opacity: 0.3;
+    font-size: 150px;
+  }
+
+  .card-content_inv {
+    flex-basis: 60%;
+    padding: 40px;
+    text-align: right; /* Aligne le texte à droite */
+    margin-left: auto; /* Pousse .card-content à droite */
+  }
+
+  .card-date_inv {
+    display: flex;
+    justify-content: flex-end; /* Aligne les éléments à droite */
+    font-size: 14px;
+    color: var(--color-Honey-Bees);
+}
+
+.brand img{
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* Ensure the popup is in the foreground */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background for better focus on video */
+  padding-top: 2rem;
+}
+
+.popup-content {
+  background-color: transparent; /* Set background to transparent */
+  margin: auto;
+  padding: 0;
+  border: none;
+  width: 90%; /* Adjusted width */
+  height: 90%; /* Adjusted height */
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Added to position the close button */
+}
+
+.popup-content video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.close {
+  color: var(--color-white);
+  position: absolute;
+  top: 5px;
+  right: 10px; /* Adjusted to be closer to the video */
+  font-size: 35px;
+  font-weight: bold;
+  z-index: 1001; /* Ensure the close button is above the video */
+}
+
+.close:hover,
+.close:focus {
+  color: var(--color-Honey-Bees);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a {
+  color: var(--color-Honey-Bees);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: underline;
+}

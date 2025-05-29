@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui sommes-nous ? - Les Comédiens du bois Geffray</title>
+    <meta name="description" content="Association de Théatre à La Haie-Fouassière">
+    <meta name="keywords" content="Association, Théatre, Haie-Fouassière">
+    <meta name="author" content="Thomas CROUAN">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="css/page/actualite.css">
+    <link rel="stylesheet" href="css/composant/barre_navigation.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="svg/logo_Honey_Bees_v2.svg" alt="" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+        </a>
+        <div class="menu-btn"> 
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="index.html">Accueil</a>
+                    <a href="qui_sommes_nous.html">Qui sommes nous ?</a>
+                    <a href="prestation.html">Prestations</a>
+                    <a href="actualite.html">Actualités</a>
+                </div>
+            </div>
+        </div>
+        <img src="img/menu-btn.png" alt="menu humberger" class="menu-hamberger" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+    </header>
+    <script>
+        const menuHamburger = document.querySelector(".menu-hamberger")
+        const navLinks = document.querySelector(".menu-btn")
+            
+        menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+        })
+    </script>
+
+
+
+
+        <section class="title">
+            <h1>
+            <span>- Les Comediens du Bois geffray -</span>
+            <span>NOS ACTUALITES</span>
+            </h1>
+        </section>
+
+
+    <section class="news-main">
+        <div class="right">
+            <div class="CardContenido">
+                <section class="Info">
+                    <section class="Title">
+                        <div class="news-header">
+                            Les 50 ans des comédiens du Bois Geffray !
+                        </div>
+                        <article>
+                            06 Juin
+                        </article>
+                    </section>
+                      <hr class="hrs"/>
+                    <section class="Descripcion">
+                        <p>
+                            Cette année, notre troupe célèbre un demi-siècle de passion théâtrale et de moments partagés sur scène. Depuis 50 ans, les comédiens du Bois Geffray se sont engagés à faire vivre l’art théâtral dans notre communauté. Entre rires, émotions et performances marquantes, ce parcours a été riche en aventures humaines. Rejoignez-nous tout au long de l’année pour des événements et spectacles célébrant cet anniversaire exceptionnel !
+                        </p>
+                    </section>
+                </section>
+                <section class="Web">
+                    <img class="WebInfo" src="img/r.jpg" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;"></img>
+                </section>
+            </div>
+        </div>
+
+        <div class="left">
+            <div class="CardContenido">
+                <section class="Web">
+                    <img class="WebInfo" src="img/t.jpg" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;"></img>
+                </section>
+                <section class="Info">
+                    <section class="Title">
+                        <div class="news-header">
+                            Nouvelle pièce de théâtre réalisée par les jeunes comédiens !
+                        </div>
+                        <article>
+                            06 Juin
+                        </article>
+                    </section>
+                      <hr class="hrs"/>
+                    <section class="Descripcion">
+                        <p>
+                            Les jeunes talents de la troupe du Bois Geffray sont prêts à monter sur scène avec une nouvelle pièce pleine de fraîcheur et de dynamisme. Cette création originale met en lumière leur créativité et leur passion pour le théâtre. Venez découvrir leur travail acharné lors des représentations qui promettent de vous surprendre et de vous émouvoir. Ne manquez pas cette occasion de soutenir la relève théâtrale !
+                        </p>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="CardContenido">
+                <section class="Info">
+                    <section class="Title">
+                        <div class="news-header">
+                            Découvrez la nouvelle pièce de théâtre de la troupe adulte !
+                        </div>
+                        <article>
+                            06 Juin
+                        </article>
+                    </section>
+                      <hr class="hrs"/>
+                    <section class="Descripcion">
+                        <p>
+                            La troupe adulte revient sur les planches avec une nouvelle pièce captivante qui explore des thèmes contemporains avec finesse et humour. Portée par des comédiens expérimentés, cette production promet une soirée théâtrale inoubliable, où la performance et la mise en scène se conjuguent pour offrir un moment de pur divertissement. Réservez vite vos places pour découvrir cette nouvelle création !
+                        </p>
+                    </section>
+                </section>
+                <section class="Web">
+                    <img class="WebInfo" src="img/u.jpg" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;"></img>
+                </section>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <div id="footer"></div>
+        <script>
+            fetch('pied_de_page.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+        </script>
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/page1.js"></script>
+</html>
+
+
+
+

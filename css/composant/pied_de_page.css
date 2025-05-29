@@ -1,0 +1,259 @@
+  /*-----------------------------------*\
+  #index.css
+\*-----------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+   
+
+/**
+ * copyright 2024 Thomas CROUAN
+ */
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+
+:root {
+
+    /** 
+     * Colors  
+     */
+  
+    --color-Honey-Bees: rgb(251, 214, 130);
+    --color-white: rgb(255, 255, 255);
+    --color-bg: rgb(10, 24, 31);
+    --color-black: rgb(0, 0, 0);
+    --color-cyan: #09a6d4;
+    --color-blackgrey: #222;
+    --color-rgba-red: rgb(150, 5, 16);
+    --color-rgba-black: rgba(251, 3, 3, 0.034);
+    --color-rgba-responsive: rgba(1, 1, 1, 0.5);
+    --color-grey: #bbbbbb;
+    --color-hamberger: rgba(0, 0, 0, 0.30);
+
+    /**  
+      * Gradient colors  
+      */
+
+    --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%,  transparent 66.66% 75%);
+  
+    /**  
+      * Typography  
+      */
+  
+    /* Font-family */
+    --fontFamily-slide: "Poppins", sans-serif;
+  
+    /* Font-size */
+    --fontSize-header: 1.5rem; 
+    --fontsize-slide-a: 1em; 
+    --fontsize-slide-h1: 4em;
+    --fontsize-slide-h1-span: 1.2em;
+    --fontsize-slide-a: 1.1em;
+    --fontsize-slider-responsive: 3em;
+    --fontsize-footer: 5em;
+    --fontsize-footer-h1: 25px;
+
+    /* font-weight */
+    --weight-h1: 900;
+    --weight-h1-span: 600;
+    --weight-bold: 700;
+    --weight-regular: 500;
+    --weight-footer: 300;
+  
+    /* line-height */
+    --line-height-1: 75px;
+  
+    /* letter-spacing */
+    --letterSpacing-1: 0.15em;
+
+  
+    /**
+      * Spacing
+      */
+  
+    --section-space: 70px;
+
+    --pading-1: 15px 35px;
+    --pading-header-1040: 12px 20px;
+    --pading-section-1040: 100px 20px;
+    --pading-footer: 30px 100px;
+
+    --letter-spacing-1: 5px;
+  
+    /**
+      * Shadow
+      */
+      
+    --shadow-1: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
+    --shadow-2: 0 5px 25px rgb(1 1 1 / 20%);
+  
+    /**
+      * Border Radius
+      */
+      --radius-1: 2px;
+      --radius-2: 5px;
+      --radius-circle: 50%;
+  
+    /**
+      * Transition
+      */
+      --transition-1: 0.3s ease;
+      --transition-2: 0.5s ease;
+      --transition-3: 2s ease;
+      --transition-footer: all 0.2s ease;
+  }
+  
+
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamily-slide);
+  }
+  
+  
+  /*-----------------------------------*\
+    #FOOTER
+  \*-----------------------------------*/
+
+  footer{
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    min-height: 400px;
+    background: var(--color-bg);
+    padding: var(--pading-footer);
+  }
+
+  .footer{
+    padding: 70px 0;
+  }
+
+  .container{
+	  max-width: 1170px;
+	  margin:auto;
+  }
+
+  .container a{
+	  font-size: 16px;
+	  text-transform: capitalize;
+	  color: var(--color-white);
+	  text-decoration: none;
+	  font-weight: 300;
+	  color: var(--color-grey);
+	  display: block;
+	  transition: all 0.3s ease;
+  }
+
+  .container p{
+	  color: var(--color-grey);
+  }
+
+  .container .hover:hover{
+	  color: var(--color-white);
+	  padding-left: 8px;
+  }
+
+  .row{
+	  display: flex;
+	  flex-wrap: wrap;
+    gap: 5%;
+  }
+
+  ul{
+	  list-style: none;
+  }
+
+  .footer-col{
+    width: 30%;
+    padding: 0 15px;
+  }
+
+  .footer-col h4{
+	  font-size: 18px;
+	  color: var(--color-white);
+	  text-transform: capitalize;
+	  margin-bottom: 35px;
+	  font-weight: 500;
+	  position: relative;
+  }
+
+  .footer-col h4::before{
+	  content: '';
+	  position: absolute;
+	  left:0;
+	  bottom: -10px;
+	  background-color: var(--color-Honey-Bees);
+	  height: 2px;
+	  box-sizing: border-box;
+	  width: 50px;
+  }
+
+  .footer-col ul li:not(:last-child){
+	  margin-bottom: 10px;
+  }
+
+
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: var(--color-grey);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: var(--color-white);
+  }
+
+  .footer-col .social-links a:hover {
+    color: var(--color-grey);
+    background-color: var(--color-white);
+  }
+
+  .footer-mid{
+    padding-left: 25%;
+  }
+
+  .low {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px; /* Optionnel, pour ajouter un espace au-dessus */
+  }
+  
+  .low p {
+    margin: 0;
+    display: inline;
+  }
+  
+  .low a {
+    display: inline;
+    text-decoration: none ;
+  }
+
+  /*responsive*/
+  @media(max-width: 767px){
+    .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
+    }
+    section{
+      margin-bottom: 580px;
+    }
+  }
+
+  @media(max-width: 574px){
+    .footer-col{
+      width: 100%;
+    }
+    section{
+      margin-bottom: 950px;
+    }
+  }

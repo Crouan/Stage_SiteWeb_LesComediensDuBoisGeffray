@@ -1,0 +1,521 @@
+/*-----------------------------------*\
+  #index.css
+\*-----------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+   
+
+/**
+ * copyright 2024 Thomas CROUAN
+ */
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+
+:root {
+
+    /** 
+     * Colors  
+     */
+  
+    --color-Honey-Bees: rgb(251, 214, 130);
+    --color-white: rgb(255, 255, 255);
+    --color-bg: rgb(10, 24, 31);
+    --color-black: rgb(0, 0, 0);
+    --color-cyan: #09a6d4;
+    --color-blackgrey: #222;
+    --color-rgba-red: rgb(150, 5, 16);
+    --color-rgba-black: rgba(251, 3, 3, 0.034);
+    --color-rgba-responsive: rgba(1, 1, 1, 0.5);
+    --color-grey: #bbbbbb;
+    --color-hamberger: rgba(0, 0, 0, 0.30);
+
+    /**  
+      * Gradient colors  
+      */
+
+    --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%,  transparent 66.66% 75%);
+  
+    /**  
+      * Typography  
+      */
+  
+    /* Font-family */
+    --fontFamily-slide: "Poppins", sans-serif;
+  
+    /* Font-size */
+    --fontSize-header: 1.5rem; 
+    --fontsize-slide-a: 1em; 
+    --fontsize-slide-h1: 4em;
+    --fontsize-slide-h1-span: 1.2em;
+    --fontsize-slide-a: 1.1em;
+    --fontsize-slider-responsive: 3em;
+    --fontsize-footer: 5em;
+    --fontsize-footer-h1: 25px;
+
+    /* font-weight */
+    --weight-h1: 900;
+    --weight-h1-span: 600;
+    --weight-bold: 700;
+    --weight-regular: 500;
+    --weight-footer: 300;
+  
+    /* line-height */
+    --line-height-1: 75px;
+  
+    /* letter-spacing */
+    --letterSpacing-1: 0.15em;
+
+  
+    /**
+      * Spacing
+      */
+  
+    --section-space: 70px;
+
+    --pading-1: 15px 35px;
+    --pading-header-1040: 12px 20px;
+    --pading-section-1040: 100px 20px;
+    --pading-footer: 30px 100px;
+
+    --letter-spacing-1: 5px;
+  
+    /**
+      * Shadow
+      */
+      
+    --shadow-1: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
+    --shadow-2: 0 5px 25px rgb(1 1 1 / 20%);
+  
+    /**
+      * Border Radius
+      */
+      --radius-1: 2px;
+      --radius-2: 5px;
+      --radius-circle: 50%;
+  
+    /**
+      * Transition
+      */
+      --transition-1: 0.3s ease;
+      --transition-2: 0.5s ease;
+      --transition-3: 2s ease;
+      --transition-footer: all 0.2s ease;
+  }
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamily-slide);
+  }
+
+
+  /*-----------------------------------*\
+    #TYPOGRAPHY
+  \*-----------------------------------*/
+  
+  
+  /*-----------------------------------*\
+    #REUSED STYLE
+  \*-----------------------------------*/
+  
+
+  /*-----------------------------------*\
+    #PRELOAD
+  \*-----------------------------------*/
+
+  /*-----------------------------------*\
+    #HOME
+  \*-----------------------------------*/
+  
+  section{
+    padding: 100px 200px;
+    margin-bottom: 400px;
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    pointer-events: none; /* Empêche l'interaction avec la couche de dégradé */
+    z-index: 1; /* Place la couche de dégradé au-dessus de l'image de fond */
+}
+
+  .home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--color-rgba-red);
+  }
+  
+  .home:before{
+    z-index: 777;
+    content: '';
+    background: var(--color-rgba-black);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .home .content{
+    z-index: 888;
+    color: var(--color-white);
+    width: 70%;
+    display: none;
+  }
+
+  .home .content.active{
+    display: block;
+  }
+
+  .home .content h1{
+    font-size: var(--fontsize-slide-h1);
+    font-weight: var(--weight-h1);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-1);
+    line-height: var(--line-height-1);
+    margin-bottom: 40px;
+  }
+
+  .home .content h1 span{
+    font-size: var(--fontsize-slide-h1-span);
+    font-weight: var(--weight-h1-span);
+  }
+
+  .home .content p{
+    margin-bottom: 40px;
+    color: var(--color-Honey-Bees);
+  }
+
+  .home .content a{
+    color: var(--color-Honey-Bees);
+    font-size: var(--fontsize-slide-a);
+    font-weight: var(--weight-regular);
+    text-decoration: none;
+  }
+
+  .btn-stick {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--color-Honey-Bees);
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-stick .stick {
+    margin-right: 0.8em;
+    height: 0.2em;
+    width: 2em;
+    position: relative;
+    background: var(--color-Honey-Bees);
+    transition: all 0.2s;
+    margin-bottom: 40px;
+  }
+
+  .btn-esp {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--color-Honey-Bees);
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-esp .arrow {
+    margin-right: 1em;
+    height: 0.15em;
+    width: 1.5em;
+    position: relative;
+    background: var(--color-Honey-Bees);
+    transition: all 0.2s;
+  }
+
+  .btn-esp .arrow::before,
+  .btn-esp .arrow::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--color-Honey-Bees);
+    height: 0.15em;
+    width: 0.6em;
+  }
+
+  .btn-esp:hover .arrow {
+    width: 3em;
+  }
+
+  .btn-esp .arrow::before {
+    transform: rotate(45deg);
+    transform-origin: right bottom;
+  }
+  
+  .btn-esp .arrow::after {
+    transform: rotate(-45deg);
+    transform-origin: right top;
+  }
+  
+  .home img{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }  
+
+  .overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25); /* Couleur noire avec une opacité de 50% */
+  }
+  .slider-navigation {
+    z-index: 888;
+    position: absolute; 
+    bottom: 50px; /* Positionné à 20px du bas de la page */
+    left: 50%; /* Centré horizontalement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0; /* Suppression de la marge inférieure */
+    transform: translateX(-50%); /* Centrer l'élément horizontalement */
+  }
+
+  .slider-navigation .nav-btn{
+    width: 18px;
+    height: 18px;
+    border-radius: var(--radius-circle);
+    cursor: pointer;
+    box-shadow: var(--shadow-1);
+    transition: var(--transition-1);
+    border: 2px solid var(--color-white); /* Ajout d'une bordure blanche */
+  }
+
+  .slider-navigation .nav-btn.active{
+    background: var(--color-white);
+  }
+
+  .slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+  }
+
+  .slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+  }
+
+  .img-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+  }
+
+  .img-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: var(--transition-3);
+    transition-property: clip-path;
+  }
+
+  .button-reserv{
+    border: 2px solid var(--color-Honey-Bees); /* Couleur des contours */
+    background-color: transparent; /* Fond transparent */
+    color: var(--color-Honey-Bees); /* Couleur du texte */
+    padding: 10px 20px; /* Espacement interne */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 12px; /* Bords arrondis */
+    transition: 0.3s, color 0.3s; /* Transition pour un effet lors du survol */
+    margin-top: 40px;
+  }
+
+  .button-reserv:hover {
+    background-color: var(--color-Honey-Bees); /* Couleur de fond lors du survol */
+    color: var(--color-black); /* Couleur du texte lors du survol */
+  }
+
+    /*-----------------------------------*\
+    #Bouton REserver
+    \*-----------------------------------*/
+  .custom-model-main {
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; /* z-index: 1050; */
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear, z-index 0.15;
+    -o-transition: opacity 0.15s linear, z-index 0.15;
+    transition: opacity 0.15s linear, z-index 0.15;
+    z-index: -100000;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .model-open {
+    z-index: 99999;
+    opacity: 1;
+    overflow: hidden;
+  }
+  .custom-model-inner {
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+    display: inline-block;
+    vertical-align: middle;
+    width: 600px;
+    margin: 30px auto;
+    max-width: 97%;
+  }
+  .custom-model-wrap {
+    display: block;
+    width: 100%;
+    position: relative;
+    background-image: url(/img/fond.png);
+    border: 2px solid var(--color-blackgrey);
+    border-radius: 6px;
+    text-align: left;
+    padding: 20px;
+  }
+  .model-open .custom-model-inner {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    position: relative;
+    z-index: 999;
+  }
+  .model-open .bg-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+  }
+  .bg-overlay {
+    background: rgba(0, 0, 0, 0);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    -webkit-transition: background 0.15s linear;
+    -o-transition: background 0.15s linear;
+    transition: background 0.15s linear;
+  }
+  .close-btn {
+    position: absolute;
+    right: 0;
+    top: -35px;
+    cursor: pointer;
+    z-index: 99;
+    font-size: 30px;
+    color: #fff;
+  }
+  
+  @media screen and (min-width:800px){
+    .custom-model-main:before {
+      content: "";
+      display: inline-block;
+      height: auto;
+      vertical-align: middle;
+      margin-right: -0px;
+      height: 100%;
+    }
+  }
+  @media screen and (max-width:799px){
+    .custom-model-inner{margin-top: 45px;}
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+.pop-up-content-wrap, p{
+  margin-bottom: 15px;
+}
+
+.pop-up-content-wrap, ul, li{
+  text-decoration: none; /* Enlève le soulignement */
+}
+
+
+
+.wrapper-title h3{
+  color: var(--color-white);
+  font-size: var(--fontSize-header);
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+  margin-bottom: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-title p{
+  color: var(--color-white);
+}
+
+.wrapper-title li{
+  color: var(--color-white);
+}
+
+a {
+  color: var(--color-white); /* Change la couleur du lien en blanc */
+  text-decoration: none; /* Optionnel : enlève le soulignement */
+
+}
+
+.brand img{
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+  /*-----------------------------------*\
+    #Footer
+  \*-----------------------------------*/
+  
+  footer{
+    position: fixed;
+  }
+
+

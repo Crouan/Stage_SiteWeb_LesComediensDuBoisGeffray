@@ -1,0 +1,609 @@
+/*-----------------------------------*\
+  #index.css
+\*-----------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('clash-display.css');
+   
+/**
+ * copyright 2024 Thomas CROUAN
+ */
+
+
+    /*-----------------------------------*\
+    #CUSTOM PROPERTY
+    \*-----------------------------------*/
+
+
+    :root {
+
+        /** 
+        * Colors  
+        */
+    
+        --color-Honey-Bees: rgb(251, 214, 130);
+        --color-white: rgb(255, 255, 255);
+        --color-bg: rgb(10, 24, 31);
+        --color-black: rgb(0, 0, 0);
+        --color-cyan: #09a6d4;
+        --color-blackgrey: #222;
+        --color-rgba-red: rgb(150, 5, 16);
+        --color-rgba-black: rgba(251, 3, 3, 0.034);
+        --color-rgba-responsive: rgba(1, 1, 1, 0.5);
+        --color-grey: #bbbbbb;
+
+        /**  
+        * Gradient colors  
+        */
+
+        --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%,  transparent 66.66% 75%);
+    
+        /**  
+        * Typography  
+        */
+    
+        /* Font-family */
+        --fontFamily-slide: "Poppins", sans-serif;
+        --fontFamily-ClashDisplay: "ClashDisplay";
+    
+        /* Font-size */
+        --font-size: clamp(2rem, 8vmin + 1rem, 4rem);
+        --fontSize-header: 1.5rem; 
+        --fontsize-slide-a: 1em; 
+        --fontsize-slide-h1: 4em;
+        --fontsize-slide-h1-span: 1.2em;
+        --fontsize-slide-a: 1.1em;
+        --fontsize-slider-responsive: 3em;
+        --fontsize-footer: 5em;
+        --fontsize-footer-h1: 25px;
+
+        /* font-weight */
+        --weight-h1: 900;
+        --weight-h1-span: 600;
+        --weight-bold: 700;
+        --weight-regular: 500;
+        --weight-footer: 300;
+    
+        /* line-height */
+        --line: color-mix(in lch, canvasText 15%, transparent);
+        --line-height-1: 75px;
+    
+        /* letter-spacing */
+        --letterSpacing-1: 0.15em;
+
+    
+        /**
+        * Spacing
+        */
+        --section-space: 70px;
+
+        --pading-1: 15px 35px;
+        --pading-header-1040: 12px 20px;
+        --pading-section-1040: 100px 20px;
+        --pading-footer: 30px 100px;
+    
+        --letter-spacing-1: 5px;
+
+        --base: 0.4;
+        --header-height: 100vh;
+    
+        /**
+        * Shadow
+        */
+        --shadow-1: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
+        --shadow-2: 0 5px 25px rgb(1 1 1 / 20%);
+
+        /**
+        * Border Radius
+        */
+        --radius-1: 2px;
+        --radius-2: 5px;
+        --radius-3: 20px;
+        --radius-circle: 50%;
+
+        /**
+        * Transition
+        */
+        --overlay: color-mix(in lch, canvas 70%, transparent);
+        color-scheme: dark only;
+
+        --transition-1: 0.3s ease;
+        --transition-2: 0.5s ease;
+        --transition-3: 2s ease;
+        --transition-footer: all 0.2s ease;
+    }
+  
+    :root[data-theme="light"] {
+        --base: 0.3;
+        --line: color-mix(in lch, canvasText 35%, transparent);
+        --overlay: color-mix(in lch, canvas 70%, transparent);
+        color-scheme: light only;
+    }
+  
+  
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+    *,
+    *:after,
+    *:before {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+    }
+
+
+  /*-----------------------------------*\
+    #TYPOGRAPHY
+  \*-----------------------------------*/
+  
+  
+  /*-----------------------------------*\
+    #REUSED STYLE
+  \*-----------------------------------*/
+  
+
+  /*-----------------------------------*\
+    #PRELOAD
+  \*-----------------------------------*/
+
+  /*-----------------------------------*\
+    #HOME
+  \*-----------------------------------*/
+
+    body {
+        min-height: 100vh;
+        font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+        background: canvas;
+        margin: 0;
+        padding: 0;
+    }
+
+    body::before {
+        --size: 60px;
+        content: "";
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background: linear-gradient( 90deg, var(--line) 1px, transparent 1px var(--size))
+            50% 50% / var(--size) var(--size),
+            linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+            var(--size) var(--size);
+        mask: linear-gradient(-15deg, transparent 40%, white);
+        top: 0;
+        transform-style: flat;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    :is(h1, h2) {
+        font-size: clamp(2rem, 3vw + 1rem, 6rem);
+    }
+
+    [href="#title_hist"] {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        translate: -50% 0;
+        width: 48px;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        color: canvasText;
+    }
+
+    [href="#title_hist"] svg {
+        width: 75%;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    [data-split] {
+        font-size: var(--font-size);
+        font-weight: 600;
+    }
+
+    .title {
+        min-height: var(--header-height);
+        display: grid;
+        place-items: center;
+        position: relative;
+        transform-origin: 50% 0%;
+    }
+
+    h1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    h1 > span:first-of-type {
+        font-size: 0.35em;
+        color: var(--color-Honey-Bees);
+        text-transform: uppercase;
+    }
+
+    .title > section {
+        position: relative;
+        top: 0;
+        min-height: var(--header-height);
+        width: 100%;
+        translate: 0 -100%;
+        display: grid;
+        place-items: center;
+        background: var(--overlay);
+    }
+
+    .title > section::before {
+        content: "";
+        background: var(--overlay);
+        position: absolute;
+        inset: 0;
+        translate: 0 100%;
+    }
+
+    video {
+        position: sticky;
+        top: 0;
+        height: var(--header-height);
+        width: 100vw;
+        object-fit: cover;
+        background: canvas;
+    }
+
+    section:not(.reader) {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    .content {
+        position: sticky;
+        top: 0;
+        min-height: 100vh;
+        width: 100vw;
+        max-width: calc(100%);
+        display: grid;
+        place-items: center;
+        margin: 0 auto;
+        line-height: 1;
+        margin-bottom: 100px;
+    }
+
+    .content span {
+        opacity: calc(var(--base) + (var(--active)));
+        transition: opacity 0.5s;
+    }
+
+    .reader {
+        --thick: 0px;
+        padding: 0 10vw;
+        text-align: justify;
+        outline: var(--thick) dashed var(--color-Honey-Bees);
+        outline-offset: calc(var(--thick) * -1);
+
+        /* The trick here is that --ppc could be dynamic	*/
+        height: calc(
+            ((var(--ppc) * var(--content-length) + (var(--pad) * var(--buffer))) * 1px) +
+            100vh
+        );
+    }
+
+
+    @supports (animation-timeline: scroll()) {
+    @property --active {
+        inherits: true;
+        initial-value: 0;
+        syntax: "<number>";
+    }
+
+    .reader {
+        view-timeline: --reader block;
+    }
+
+    .content span {
+        animation: activate both steps(1);
+        animation-timeline: --reader;
+        animation-range: contain calc(((var(--start, 0) * var(--ppc)) * 1px))
+        contain calc(((var(--end, 0) * var(--ppc)) * 1px));
+    }
+
+    @keyframes activate {
+        to {
+        --active: 1;
+        }
+    }
+
+    .title {
+        animation: scale-down both ease-in;
+        animation-timeline: view();
+        animation-range: exit-crossing;
+        view-timeline: --header;
+    }
+
+    @keyframes scale-down {
+        to {
+        scale: 0.8 0.8;
+        }
+    }
+    }
+
+    .theme-toggle {
+        color: var(--color);
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        width: 48px;
+        aspect-ratio: 1;
+        padding: 0;
+        border: 0;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: transparent;
+        transition: background 0.2s;
+        cursor: pointer;
+        z-index: 100000;
+    }
+
+    .theme-toggle::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        background: hsl(0 0% 50% / calc(var(--intent, 0) * 0.25));
+    }
+
+    .theme-toggle:is(:hover, :focus-visible) {
+        --intent: 1;
+    }
+
+    .theme-toggle[aria-pressed="true"] svg path:last-of-type {
+        display: block;
+    }
+
+    .theme-toggle svg {
+        color: currentColor;
+        width: 50%;
+    }
+
+    .theme-toggle[aria-pressed="true"] svg path:first-of-type,
+    .theme-toggle svg path:last-of-type {
+        display: none;
+    }
+
+    ::view-transition-group(root) {
+        animation-duration: 1.25s;
+    }
+
+    ::view-transition-new(root),
+    ::view-transition-old(root) {
+        mix-blend-mode: normal;
+    }
+
+    ::view-transition-new(root) {
+        animation-name: reveal-light;
+    }
+
+    ::view-transition-old(root),
+    .dark::view-transition-old(root) {
+        animation: none;
+    }
+
+    .dark::view-transition-new(root) {
+        animation-name: reveal-dark;
+    }
+
+    @keyframes reveal-dark {
+        from {
+            clip-path: polygon(-30% 0, -30% 0, -15% 100%, -10% 115%);
+        }
+        to {
+            clip-path: polygon(-30% 0, 130% 0, 115% 100%, -10% 115%);
+        }
+    }
+
+    @keyframes reveal-light {
+        from {
+            clip-path: polygon(130% 0, 130% 0, 115% 100%, 110% 115%);
+        }
+        to {
+            clip-path: polygon(130% 0, -30% 0, -15% 100%, 110% 115%);
+        }
+    }
+
+    .button-container {
+        padding: 0 10vw;
+        margin-bottom: 20vh;
+    }
+    
+    .button-container h3 {
+        color: var(--color-white);
+        font-size: var(--fontSize-header);
+        font-weight: var(--weight-bold);
+        text-decoration: none;
+        margin-bottom: 20px;
+    }
+    
+    .separator {
+        border: none; /* Supprime la bordure par défaut */
+        height: 8px; /* Hauteur de la ligne */
+        width: 10vw;
+        background-color: white; /* Couleur de la ligne */
+        margin: 30px 0; /* Espace au-dessus et en-dessous de la ligne */
+        margin-bottom: 70px;
+        width: 50%; /* Définit la largeur du séparateur */
+        max-width: 400px; /* Limite la largeur maximale du séparateur */
+    }
+    
+    button {
+        outline: none; /* Supprime le contour par défaut */
+        border: none; /* Supprime la bordure */
+    }
+    
+    .button-container img {
+        border-radius: var(--radius-3);
+    }
+    
+    .button-pieces {
+        display: flex; /* Utilisation de flexbox pour aligner les éléments horizontalement */
+        justify-content: space-between; /* Espace maximal entre les éléments */
+        flex-wrap: wrap; /* Permettre aux éléments de se renvoyer à la ligne si nécessaire */
+    }
+    
+    .button-nv-pieces, .button-an-pieces {
+        position: relative; /* Pour positionner le texte par rapport à l'image */
+        flex: 1 1 45%; /* Permet aux éléments de prendre jusqu'à 45% de la largeur disponible */
+        max-width: 45%; /* Assure que les éléments ne dépassent pas 45% de la largeur */
+    }
+    
+    .button-nv-pieces img, .button-an-pieces img {
+        width: 100%; /* Utilise toute la largeur disponible */
+        height: auto; /* Ajuste la hauteur automatiquement pour conserver les proportions */
+        display: block; /* Pour éviter l'espace supplémentaire sous l'image */
+    }
+    
+    .button-nv-pieces p, .button-an-pieces p {
+        position: absolute; /* Position absolue pour le texte */
+        bottom: 0; /* Alignement en bas */
+        left: 0; /* Alignement à gauche */
+        color: white; /* Couleur du texte */
+        padding: 10px; /* Espacement autour du texte */
+        margin: 0; /* Supprime les marges par défaut */
+        width: 100%; /* Largeur pleine de l'élément parent */
+        box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+    }
+    
+    /* Media Queries pour les écrans plus petits */
+    @media (max-width: 768px) {
+        .button-container {
+            padding: 0 5vw;
+        }
+        
+        .button-nv-pieces, .button-an-pieces {
+            flex: 1 1 100%; /* Prend 100% de la largeur disponible sur les petits écrans */
+            max-width: 100%; /* Assure que les éléments ne dépassent pas 100% de la largeur */
+        }
+        
+        .separator {
+            width: 80vw; /* Ajuste la largeur de la ligne de séparation */
+        }
+    }
+    
+    .text-container {
+        display: flex; /* Aligne les éléments horizontalement */
+        align-items: center; /* Centre les éléments verticalement */
+        gap: 20px; /* Espace entre le texte et l'image */
+        padding: 0 10vw; /* Padding autour du conteneur */
+        margin-bottom: 20vh;
+    }
+    
+    .img_text {
+        flex: 1; /* Pour que l'image prenne une partie de l'espace disponible */
+        position: relative; /* Nécessaire pour la position absolue de l'image */
+        overflow: hidden; /* Masque ce qui dépasse de la div */
+        background-color: #f0f0f0; /* Ajoutez une couleur de fond pour vérifier la taille du conteneur */
+        height: 100%; /* Prend 100% de la hauteur de .text_container */
+        display: flex; /* Utilise flexbox pour aligner les éléments */
+        align-items: center; /* Centre verticalement l'image */
+        justify-content: center; /* Centre horizontalement l'image */
+        align-items: center; /* Centre les éléments verticalement */
+    }
+
+    .img_text_1 {
+        flex: 1; /* Pour que l'image prenne une partie de l'espace disponible */
+        position: relative; /* Nécessaire pour la position absolue de l'image */
+        overflow: hidden; /* Masque ce qui dépasse de la div */
+        background-color: #f0f0f0; /* Ajoutez une couleur de fond pour vérifier la taille du conteneur */
+        height: 450px;
+        display: flex; /* Utilise flexbox pour aligner les éléments */
+        align-items: center; /* Centre verticalement l'image */
+        justify-content: center; /* Centre horizontalement l'image */
+        align-items: center; /* Centre les éléments verticalement */
+    }
+
+    .img_text img {
+        object-fit: cover; /* Assurez-vous que l'image couvre tout l'espace disponible */
+        display: block; /* Assurez-vous que l'image est un élément de bloc */
+        height: 100%;
+        align-items: center; /* Centre les éléments verticalement */
+    }
+    
+    .text_content {
+        flex: 1; /* Prend tout l'espace disponible à droite */
+        display: flex;
+        flex-direction: column; /* Aligne le titre et le paragraphe verticalement */
+        gap: 30px; /* Espace entre le titre et le paragraphe */
+    }
+    
+    .text-container h4 {
+        font-size: 1.5em; /* Taille de police du titre */
+        margin: 0; /* Supprime les marges par défaut */
+        margin-bottom: 20px;
+        font-family: var(--fontFamily-ClashDisplayc);
+    }
+    
+    .text-container p {
+        margin: 0; /* Supprime les marges par défaut */
+    }
+    
+      
+      
+    
+    @media (max-width: 768px) {
+        .text-container {
+            flex-direction: column; /* Aligne les éléments verticalement sur les petits écrans */
+            gap: 10px; /* Espace entre les éléments */
+        }
+    
+        .text-container img {
+            width: 100%; /* Prend toute la largeur du conteneur */
+            height: auto; /* Ajuste la hauteur automatiquement pour conserver les proportions */
+        }
+    
+        .text-content {
+            max-width: 100%; /* Prend toute la largeur disponible sur les petits écrans */
+        }
+    }
+
+    #title_hist {
+        text-align: center; /* Centre le texte à l'intérieur du conteneur */
+        margin-bottom: 15vh;
+    }
+    
+    #title_hist h3 {
+        margin: 0; /* Supprime les marges par défaut autour du titre */
+        margin-bottom: 30px;
+    }
+    
+    #title_hist p {
+        margin-bottom: 30px; /* Ajoute un espace au-dessus et en dessous du texte */
+    }
+    
+    #title_hist .separator {
+        width: 50%; /* Définit la largeur du séparateur */
+        max-width: 400px; /* Limite la largeur maximale du séparateur */
+        margin-left: auto; /* Centre horizontalement */
+        margin-right: auto; /* Centre horizontalement */
+    }
+      
+    .brand img{
+        width: 50px; /* Adjust the width as needed */
+        height: 50px; /* Adjust the height as needed */
+        display: flex;
+        align-items: center;
+      }

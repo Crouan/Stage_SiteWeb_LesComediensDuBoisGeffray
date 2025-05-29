@@ -1,0 +1,251 @@
+/*-----------------------------------*\
+  #index.css
+\*-----------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('clash-display.css');
+   
+/**
+ * copyright 2024 Thomas CROUAN
+ */
+
+
+    /*-----------------------------------*\
+    #CUSTOM PROPERTY
+    \*-----------------------------------*/
+
+
+    :root {
+
+        /** 
+        * Colors  
+        */
+    
+        --color-Honey-Bees: rgb(251, 214, 130);
+        --color-white: rgb(255, 255, 255);
+        --color-bg: rgb(10, 24, 31);
+        --color-black: rgb(0, 0, 0);
+        --color-cyan: #09a6d4;
+        --color-blackgrey: #222;
+        --color-rgba-red: rgb(150, 5, 16);
+        --color-rgba-black: rgba(251, 3, 3, 0.034);
+        --color-rgba-responsive: rgba(1, 1, 1, 0.5);
+        --color-grey: #bbbbbb;
+
+        /**  
+        * Gradient colors  
+        */
+
+        --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%,  transparent 66.66% 75%);
+    
+        /**  
+        * Typography  
+        */
+    
+        /* Font-family */
+        --fontFamily-slide: "Poppins", sans-serif;
+        --fontFamily-ClashDisplay: "ClashDisplay";
+    
+        /* Font-size */
+        --font-size: clamp(2rem, 8vmin + 1rem, 4rem);
+        --fontSize-header: 1.5rem; 
+        --fontsize-slide-a: 1em; 
+        --fontsize-slide-h1: 4em;
+        --fontsize-slide-h1-span: 1.2em;
+        --fontsize-slide-a: 1.1em;
+        --fontsize-slider-responsive: 3em;
+        --fontsize-footer: 5em;
+        --fontsize-footer-h1: 25px;
+
+        /* font-weight */
+        --weight-h1: 900;
+        --weight-h1-span: 600;
+        --weight-bold: 700;
+        --weight-regular: 500;
+        --weight-footer: 300;
+    
+        /* line-height */
+        --line: color-mix(in lch, canvasText 15%, transparent);
+        --line-height-1: 75px;
+    
+        /* letter-spacing */
+        --letterSpacing-1: 0.15em;
+
+    
+        /**
+        * Spacing
+        */
+        --section-space: 70px;
+
+        --pading-1: 15px 35px;
+        --pading-header-1040: 12px 20px;
+        --pading-section-1040: 100px 20px;
+        --pading-footer: 30px 100px;
+    
+        --letter-spacing-1: 5px;
+
+        --base: 0.4;
+        --header-height: 100vh;
+    
+        /**
+        * Shadow
+        */
+        --shadow-1: 0px 0px 2px 0px rgba(255, 255, 255, 0.5);
+        --shadow-2: 0 5px 25px rgb(1 1 1 / 20%);
+
+        /**
+        * Border Radius
+        */
+        --radius-1: 2px;
+        --radius-2: 5px;
+        --radius-3: 20px;
+        --radius-circle: 50%;
+
+        /**
+        * Transition
+        */
+        --overlay: color-mix(in lch, canvas 70%, transparent);
+        color-scheme: dark only;
+
+        --transition-1: 0.3s ease;
+        --transition-2: 0.5s ease;
+        --transition-3: 2s ease;
+        --transition-footer: all 0.2s ease;
+    }
+  
+    :root[data-theme="light"] {
+        --base: 0.3;
+        --line: color-mix(in lch, canvasText 35%, transparent);
+        --overlay: color-mix(in lch, canvas 70%, transparent);
+        color-scheme: light only;
+    }
+  
+  
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+    *,
+    *:after,
+    *:before {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+    }
+
+
+  /*-----------------------------------*\
+    #TYPOGRAPHY
+  \*-----------------------------------*/
+  
+  
+  /*-----------------------------------*\
+    #REUSED STYLE
+  \*-----------------------------------*/
+  
+
+  /*-----------------------------------*\
+    #PRELOAD
+  \*-----------------------------------*/
+
+  /*-----------------------------------*\
+    #HOME
+  \*-----------------------------------*/
+
+
+
+    body::before {
+        --size: 60px;
+        content: "";
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background: linear-gradient( 90deg, var(--line) 1px, transparent 1px var(--size))
+            50% 50% / var(--size) var(--size),
+            linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+            var(--size) var(--size);
+        mask: linear-gradient(-15deg, transparent 40%, white);
+        top: 0;
+        transform-style: flat;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+
+    .title > section {
+        position: relative;
+        top: 0;
+        min-height: var(--header-height);
+        width: 100%;
+        translate: 0 -100%;
+        display: grid;
+        place-items: center;
+        background: var(--overlay);
+    }
+
+    .title > section::before {
+        content: "";
+        background: var(--overlay);
+        position: absolute;
+        inset: 0;
+        translate: 0 100%;
+    }
+
+    .all{
+      padding: 10vw;
+    }
+
+    .ml{
+      margin-bottom: 20vh;
+    }
+
+    h1{
+      margin-bottom: 40px;
+    }
+
+    h2{
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+
+    .plan {
+      margin: 0; /* Évite les marges supplémentaires autour du plan */
+      padding: 0; /* Retire les espacements internes */
+      
+    }
+  
+    .plan h1, .plan h2, .plan ul, .plan li {
+        margin: 0;
+        padding: 0;
+        text-align: left; /* Aligne le texte à gauche */
+    }
+    
+    .plan ul {
+        list-style-type: none; /* Retire les puces des listes */
+    }
+    
+    .plan li {
+        margin-left: 0; /* Colle les éléments de la liste à gauche */
+    }
+
+    ul{
+      margin-bottom: 25px;
+    }
+
+    .lien{
+      text-decoration: none;
+      color: var(--color-white);
+    }
+
+    .video{
+      margin-bottom: 20vh;
+    }
+
+    .brand img{
+      width: 50px; /* Adjust the width as needed */
+      height: 50px; /* Adjust the height as needed */
+      display: flex;
+      align-items: center;
+    }

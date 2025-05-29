@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui sommes-nous ? - Les Comédiens du bois Geffray</title>
+    <meta name="description" content="Association de Théatre à La Haie-Fouassière">
+    <meta name="keywords" content="Association, Théatre, Haie-Fouassière">
+    <meta name="author" content="Thomas CROUAN">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="css/page/prestation.css">
+    <link rel="stylesheet" href="css/composant/barre_navigation.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      <img src="svg/logo_Honey_Bees_v2.svg" alt="" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+    </a>
+    <div class="menu-btn"> 
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Accueil</a>
+                <a href="qui_sommes_nous.html">Qui sommes nous ?</a>
+                <a href="prestation.html">Prestations</a>
+                <a href="actualite.html">Actualités</a>
+            </div>
+        </div>
+    </div>
+    <img src="img/menu-btn.png" alt="menu humberger" class="menu-hamberger" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+</header>
+<script>
+    const menuHamburger = document.querySelector(".menu-hamberger")
+    const navLinks = document.querySelector(".menu-btn")
+        
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+    })
+</script>
+
+    <div class="title">
+      <h1>
+        <span>- Les Comediens du Bois geffray -</span>
+        <span>NOS PRESTATIONS</span>
+      </h1>
+    </div>
+
+    <div class="wrapper">
+        <div class="wrapper-title">
+            <h3>Nos prestations</h3>
+            <p>Nous sommes fier de vous proposer des prestations qui seront convenir tout age. Chaque prestations comprend 1 presentations de la piece de théatre appris lors de l'année.</p>
+            <hr class="separator">
+          </div>
+        <div class="card">
+          <div class="poster">
+            <h1 class="title_pres">Cours Enfants</h1>
+            <img src="img/img_50_ans/13-mostafa-meraji-ypgeUzVpfmo-unsplash.jpg" alt="Location Unknown" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+          </div>
+          <div class="details">
+            <h2>Inscription pour l'année : ... €</h2>
+            <div class="tags">
+              <span class="tag">Jeudi: 17h30-19h00</span>
+            </div>
+            <p class="desc">Salle des Camélias</p>
+            <div class="cast">
+              <h3>Professeur</h3>
+              <ul class="liste">
+                <li>
+                  <div class="prof-container">
+                    <img src="https://i.postimg.cc/8P7X7r7r/cast-12.jpg" alt="Rebecca Floyd" title="Rebecca Floyd" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+                    <p class="nom_prof">Pascaline Terrien</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="poster">
+            <h1 class="title_pres">Cours Jeunes</h1>
+            <img src="img/img_50_ans/14-paul-green-mln2ExJIkfc-unsplash.jpg" alt="Location Unknown" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+          </div>
+          <div class="details">
+            <h2>Inscription pour l'année : ... €</h2>
+            <div class="tags">
+              <span class="tag">... : ..h..-..h..</span>
+            </div>
+            <p class="desc">Salle des Camélias</p>
+            <div class="cast">
+              <h3>Professeur</h3>
+              <ul class="liste">
+                <li>
+                  <div class="prof-container">
+                    <img src="https://i.postimg.cc/yY2QcYRp/cast-21.jpg" alt="Angelina Whyte" title="Angelina Whyte" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+                    <p class="nom_prof">Pascaline Terrien</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="poster">
+            <h1 class="title_pres">Cours Adolescent</h1>
+            <img src="img/img_50_ans/12-mostafa-meraji-vu6sHeN9bOU-unsplash.jpg" alt="Location Unknown" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+          </div>
+          <div class="details">
+            <h2>Inscription pour l'année : ... €</h2>
+            <div class="tags">
+              <span class="tag">Jeudi: 19h00-20h30</span>
+            </div>
+            <p class="desc">Salle des Camélias</p>
+            <div class="cast">
+              <h3>Professeur</h3>
+              <ul class="liste">
+                <li>
+                  <div class="prof-container">
+                    <img src="https://i.postimg.cc/yY2QcYRp/cast-21.jpg" alt="Angelina Whyte" title="Angelina Whyte" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+                    <p class="nom_prof">Pascaline Terrien</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="poster">
+            <h1 class="title_pres">Troupe Adultes</h1>
+            <img src="img/img_50_ans/15-sam-moghadam-khamseh-Y8jR4xno22g-unsplash.jpg" alt="Location Unknown"oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+          </div>
+          <div class="details">
+            <h2>Inscription pour l'année : 15€/personne 20€/couple</h2>
+            <div class="tags">
+                <span class="tag">Mardi: 20h15-22H30</span>
+            </div>
+            <p class="desc">Espace Sévria</p>
+          </div>
+        </div>
+      </div>
+
+    <footer>
+        <div id="footer"></div>
+        <script>
+            fetch('pied_de_page.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+        </script>
+    </footer>
+
+</body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Si nécessaire -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/page1.js"></script>
+</html>
+
+
+
+

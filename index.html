@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Comédiens du bois Geffray</title>
+    <meta name="description" content="Association de Théatre à La Haie-Fouassière">
+    <meta name="keywords" content="Association, Théatre, Haie-Fouassière">
+    <meta name="author" content="Thomas CROUAN">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="css/page/accueil.css">
+    <link rel="stylesheet" href="css/composant/barre_navigation.css">
+
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="svg/logo_Honey_Bees_v2.svg" alt="" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+        </a>
+        <div class="menu-btn"> 
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="index.html">Accueil</a>
+                    <a href="qui_sommes_nous.html">Qui sommes nous ?</a>
+                    <a href="prestation.html">Prestations</a>
+                    <a href="actualite.html">Actualités</a>
+                </div>
+            </div>
+        </div>
+        <img src="img/menu-btn.png" alt="menu humberger" class="menu-hamberger" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;">
+    </header>
+    <script>
+        const menuHamburger = document.querySelector(".menu-hamberger")
+        const navLinks = document.querySelector(".menu-btn")
+            
+        menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+        })
+    </script>
+
+
+    <section class="home">
+        <div class="gradient-overlay"></div>
+        <img decoding="async" class="img-slide active" src="img/stefano-stacchini-jhPSJDhiRyQ-unsplash.jpg" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;"></img>
+        <img decoding="async" class="img-slide" src="img/rob-laughter-WW1jsInXgwM-unsplash.jpg" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;"></img>
+        <img decoding="async" class="img-slide" src="img/kilyan-sockalingum-nW1n9eNHOsc-unsplash.jpg" oncontextmenu="return false;" ondragstart="return false;" onmousedown="return false;"></img>
+        <div class="overlay"></div>
+        <div class="content active">
+            <div class="btn-stick">   
+                <div class="stick"></div>
+                <p>Dernières Actualités</p>
+            </div>
+            <h1>Découvrez les 50 ans des comédiens du bois Geffray !</h1>
+            <a href="anniversaire.html" class="btn-esp">
+                <div class="arrow"></div>
+                En savoir plus
+            </a>
+        </div>
+        <div class="content">
+            <div class="btn-stick">
+                <div class="stick"></div>
+                <p>Dernières Actualitées</p>
+            </div>
+            <h1>Venez voir le spectacle des jeunes comédiens</h1>
+            <a href="/piece_theatre_nv.html#card-container-2" class="btn-esp">
+                <div class="arrow"></div>
+                En savoir plus
+            </a>
+        </div>
+        <div class="content">
+            <div class="btn-stick">
+                <div class="stick"></div>
+                <p>Dernières Actualitées</p>
+            </div>
+            <h1>Découvrez la nouvelle pièce de théâtre des adultes !</h1>  
+            <a href="/piece_theatre_nv.html#card-container-1" class="btn-esp">
+                <div class="arrow"></div>
+                En savoir plus
+            </a>
+            <div class="button-reserv">Réserver</div>  
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div> 
+    </section>
+
+    <div id="footer"></div>
+    <script>
+        fetch('pied_de_page.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    
+    <div class="custom-model-main">
+        <div class="custom-model-inner">        
+            <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <div class="wrapper-title">
+                        <h3>Vous pouvez réserver : </h3>
+                        <p>
+                            <ul>
+                                <li>- Sur le site HelloAsso à partir du 5 février 2024 </li>
+                                <li>- Ou en téléphonant au 07.64.12.36.05 de 19h à 20h30 <br> 
+                                    (les mardis : 20,27 février ou 05,19 & 26 mars / les mercredis : 13,20 & 27 mars / les jeudis : 22,29 février ou 7 mars)</li>
+                            </ul>
+                        </p>
+                        <br>
+                        <a href="https://www.helloasso.com/associations/les-comediens-du-bois-geffray">Voici le lien : https://www.helloasso.com/associations/les-comediens-du-bois-geffray</a>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+        <div class="bg-overlay"></div>
+    </div> 
+
+</body>
+    <!-- Inclure jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Inclure vos scripts personnalisés -->
+    <script src="js/accueil.js"></script>
+    <script src="js/boutton.js"></script>
+</html>
